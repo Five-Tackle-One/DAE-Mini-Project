@@ -49,5 +49,10 @@ def set_index(data_frame,index_name="ID",change="fill"): # This method handles i
     return data
 
 
+def swap_columns(data,i,j):
+    cols = list(data.columns.values)
+    cols[i],cols[j] = cols[j],cols[i]
+    return data[cols]
+
 def display_records_per_year(data):
     pass
