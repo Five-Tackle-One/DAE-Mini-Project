@@ -33,7 +33,7 @@ def plot_scatter_matrix(data_matrix,Title,x="Head Age",y="Net Income",Colors=["D
             plot_data = threshold_data[threshold_data[y] > 0]
             plot_data.plot.scatter(x=x,y=y,ax=f2_axes[i][j],color=Colors[i*2 + j])
             f2_axes[i][j].set_title(Title.format(i*2 + j + 5),fontsize=20)
-            f2_axes[i][j].set_xlabel("Year",fontsize=15)
+            f2_axes[i][j].set_xlabel("Age",fontsize=15)
             f2_axes[i][j].set_ylabel(y,fontsize=17)
             
 
