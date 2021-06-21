@@ -17,6 +17,10 @@ fill: Let the index be the range
 }
 """
 # Data Cleaning Methods
+"""
+Input: Columns
+Lower the cases in the string 
+"""
 def lower_columns(*data):
     frames = []
     for frame in range(len(data)):
@@ -24,6 +28,10 @@ def lower_columns(*data):
         frames[frame].columns = map(str.lower,frames[frame].columns)
     return frames
 
+
+"""
+Return a sub-dataset pertaining to the given columns
+"""
 def select_columns(data,Label_Change,Columns = ['Q814Exp','Q58Val','head_sex','head_age','totmhinc','Q812Netincome']): # Select Variables For A Dataset
     ghs = data.copy()
     ghs = ghs[Columns] # Select The Chosen Variables
@@ -32,6 +40,9 @@ def select_columns(data,Label_Change,Columns = ['Q814Exp','Q58Val','head_sex','h
         ghs
     return ghs
 
+"""
+Loop through all the list of datasets and select the given columns for each
+"""
 def prune_datasets(Label_Change,Columns,*ghs): # Return A List of Pruned Datasets
     prune_dataset = []
     for prune in range(len(ghs)):
@@ -40,6 +51,9 @@ def prune_datasets(Label_Change,Columns,*ghs): # Return A List of Pruned Dataset
     return prune_dataset
 
 
+"""
+Select the index of the dataset
+"""
 def set_index(data_frame,index_name="ID",change="fill"): # This method handles indices
     data = data_frame.copy()
     data.rename(columns={index_name:index_name.lower()},inplace=True)
